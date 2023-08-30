@@ -42,7 +42,7 @@ obstacle_spawn_time = 0
 # Счет игры
 score = 0
 
-# Шрифт для отображения счета
+# Шрифт для отображения счёта
 font = pygame.font.Font(None, 36)
 
 # Главный игровой цикл
@@ -54,7 +54,7 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
-    # Управление кораблем
+    # Управление кораблём
     keys = pygame.key.get_pressed()
     if keys[pygame.K_UP]:
         ship_y -= ship_speed
@@ -65,9 +65,8 @@ while running:
     for obstacle in obstacles:
         obstacle[0] -= ship_speed
 
-    # Создание нового препятствия каждые 2 секунды
+    # Создание нового препятствия
     obstacle_spawn_time += clock.get_rawtime()
-
     if obstacle_spawn_time >= 400:
         obstacle_spawn_time = 0
         obstacle_y = random.randint(0, HEIGHT - OBSTACLE_HEIGHT)
